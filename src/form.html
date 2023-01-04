@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegar meu café</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <img class="blur2" src="./assets/blur-2.png" alt="">
+    </div>
+
+    <div>
+        <img class="blur1" src="./assets/blur-1.png" alt="">
+    </div>
+
+    <header>
+        <div class="card">
+            <img src="./assets/logo-desktop.svg" alt="">
+        </div>
+        
+        <nav>           
+            <ul>
+                <li><a class="home" href="./index.html">Home</a></li>
+                <li>Menu</li>
+                <li>Recompensas</li>
+                <li>Git Cards</li>
+                <li>Lojas</li>
+            </ul>           
+        </nav>        
+    </header>
+
+    <main>
+        <form id="form">       
+
+            <div class="data">
+                <h1>Preencha seus dados</h1>
+                <div>
+                    <label>Nome:</label>
+                    <input class="input-data" required type="text" id="name"  />
+                </div>
+    
+                <div>
+                    <label>E-mail:</label>
+                    <input class="input-data" required type="email" id="email" />
+                </div>
+    
+                <div>
+                    <label>Contato:</label>            
+                    <input class="input-data" required keyboardType="numeric" minlength="6"
+                    maxLength="11" placeholder="(84)98135-4525" type="tel" id="contact" >
+                </div>
+    
+                <div>
+                    <label>Endereço:</label>
+                    <input class="input-data" required placeholder="Rua maria carma - bairro chicago - n°22"  type="text" id="address">
+                </div>
+            </div>          
+
+            <div class="product">
+                <h2>Escolha seu café</h2>
+
+                <div>
+                    <div class="coffe">
+                        <label>Chocolatto</label>
+                        <input type="checkbox" id="chocollato">
+    
+                        <label>Quantidade</label>
+                        <select id="quantityChocollato">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>                        
+                    </div>
+                    <div class="checkCoffe" id="checkChocollato"></div>
+    
+                    <div class="coffe">
+                        <label>Capuccino Avelã</label>
+                        <input type="checkbox" id="capuccino">
+    
+                        <label>Quantidade</label>
+                        <select id="quantityCapuccino">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="checkCoffe" id="checkCapuccino"></div>
+    
+                    <div class="coffe">
+                        <label>Espresso</label>
+                        <input type="checkbox" id="espresso">
+    
+                        <label>Quantidade</label>
+                        <select id="quantityEspresso">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="checkCoffe" id="checkEspresso"></div>
+    
+                    <div class="coffe">
+                        <label>Latte Macchiato</label>
+                        <input type="checkbox" id="latte">
+    
+                        <label>Quantidade</label>
+                        <select id="quantityLatte">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="checkCoffe" id="checkLatte"></div>
+                </div>
+
+            </div>
+
+            <div class="comments">
+                <h3>Observações</h3>
+                <textarea placeholder="Digite aqui suas observações" class="input-data" id="comentarios" cols="30" rows="10"></textarea>
+
+                <button class="submitbutton">Enviar Pedido</button>
+            </div>      
+
+            <div class="order visible">
+                <h1>RESUMO DO PEDIDO</h1>
+                <p>Nome: 
+                    <div class="orderName"></div>
+                </p>
+                <p>E-mail:
+                    <div class="orderEmail"></div>
+                </p>
+                <p>Contato:
+                    <div class="orderContact"></div>
+                </p>
+                <p>Endereço:
+                    <div class="orderAddress"></div>
+                </p>
+
+                <div class="itemCoffe">
+                    <p>Ítens</p>                
+                </div> 
+                <div>              
+                    <p>Observações:
+                        <div class="orderObservacoes"></div>
+                    </p>
+                </div>
+
+            </div>
+        </form>
+    </main>
+
+   <script src="./index.js"></script>
+    
+</body>
+</html>
