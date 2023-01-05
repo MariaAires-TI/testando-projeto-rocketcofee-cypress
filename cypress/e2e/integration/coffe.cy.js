@@ -14,9 +14,14 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
         cy.visit('./src/form.html')
     });
 
-    it('verifica se ao clicar no botão home o usuário é redirecionado para página inicial sem a necessidade de um clique', function() {
+    it('verifica se ao clicar no botão home, o usuário é redirecionado para página inicial sem a necessidade de um clique', function() {
         cy.visit('./src/form.html')
         cy.get('.home').should('have.attr', 'target', '_blank')        
-    });
+    });  
+
+    it.only('verifica o título da aplicação', function() {
+        cy.visit('./src/form.html')
+        cy.title().should('be.equal', 'Pegar meu café')
+    })
 
 })
