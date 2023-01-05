@@ -14,4 +14,9 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
         cy.visit('./src/form.html')
     });
 
+    it('verifica se ao clicar no botão home o usuário é redirecionado para página inicial sem a necessidade de um clique', function() {
+        cy.visit('./src/form.html')
+        cy.get('.home').should('have.attr', 'target', '_blank')        
+    });
+
 })
