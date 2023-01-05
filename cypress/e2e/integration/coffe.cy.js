@@ -5,8 +5,13 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
         cy.title().should('be.equal', 'Great Coffe')         
     })  
     
-    it.only('verifica se o formulário de pedidos abre em outra aba sem a necessidade de um clique', function() {
+    it('verifica se o formulário de pedidos abre em outra aba sem a necessidade de um clique', function() {
         cy.visit('./src/index.html')
-        cy.get('.buttonHeader').should('have.attr', 'target', '_blank')
+        cy.get('.buttonHeader').should('have.attr', 'target', '_blank')        
     });
-  })
+
+    it('visita formulário de pedidos', function() {
+        cy.visit('./src/form.html')
+    });
+
+})
