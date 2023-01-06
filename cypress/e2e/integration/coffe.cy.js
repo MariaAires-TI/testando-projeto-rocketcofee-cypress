@@ -32,10 +32,33 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
             cy.title().should('be.equal', 'Pegar meu café')
         })
     
-        // it('preenche os campos obrigatórios e envia', function() {
-        //     const longText = 'Adição de calda de chocolate'
-            
-        // });
+        it('preenche os campos obrigatórios e envia', function() {
+            const longText = 'Adição de calda de chocolate'
+            cy.get('#name')
+            .type('Ana carla Nogueira')
+            .should('have.value', 'Ana carla Nogueira')
+
+            cy.get('#email')
+            .type('ana@email.com')
+            .should('have.value', 'ana@email.com')
+
+            cy.get('#contact')
+            .type('84998989898')
+            .should('have.value', '84998989898')
+
+            cy.get('#address')
+            .type('Rua Maria Carma - Lagoa do riacho - n 900')
+            .should('have.value', 'Rua Maria Carma - Lagoa do riacho - n 900')
+
+            cy.get('#chocollato').click()
+            cy.get('#quantityChocollato').select('1')
+
+            cy.get('#comentarios')
+            .type(longText)
+            .should('have.value', longText)
+
+            cy.get('.submitbutton').click()            
+        });
     });
     
 
