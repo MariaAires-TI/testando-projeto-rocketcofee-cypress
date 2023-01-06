@@ -47,7 +47,28 @@ submitbutton.addEventListener('submit', (e) => {
     divOrderAddress.innerText = address
     divOrderObservacoes.innerText = observacoes 
 
-    let isVisibleResume = false
+    let isVisibleResume = true
+                   /* Required fields */
+    if(name == ''){
+        checkMensage('#checkName', 'Informe seu nome')
+        isVisibleResume = false
+    }    
+
+    if(email == ''){
+        checkMensage('#checkEmail', 'Informe seu email')
+        isVisibleResume = false 
+    }
+
+    if(contact == ''){
+        checkMensage('#checkContact', 'Informe seu telefone para contato') 
+        isVisibleResume = false 
+    }
+
+    if(address == ''){
+        checkMensage('#checkAddress', 'Informe seu Endereço de entrega')
+        isVisibleResume = false  
+    }
+
 
     function alertRequestSuccess (){
         alert("Seu pedido foi realizado com sucesso. Role a página para ver o resumo")
@@ -55,7 +76,6 @@ submitbutton.addEventListener('submit', (e) => {
     
     if (haveChocolatto && quantityChocollato > 0) {
         OrderSummary('Chocolatto', quantityChocollato, '#checkChocollato')
-        isVisibleResume = true
     }    
     
     if (haveChocolatto && quantityChocollato == 0) {
@@ -70,7 +90,6 @@ submitbutton.addEventListener('submit', (e) => {
 
     if (haveCapuccino && quantityCapuccino > 0) {
         OrderSummary('Cappucino Avelã', quantityCapuccino, '#checkCapuccino')
-        isVisibleResume = true
     }
     
     if (haveCapuccino && quantityCapuccino == 0) {
@@ -85,7 +104,6 @@ submitbutton.addEventListener('submit', (e) => {
 
     if (haveEspresso && quantityEspresso > 0) {
         OrderSummary('Espresso', quantityEspresso, '#checkEspresso')
-        isVisibleResume = true
     }
 
     if (haveEspresso && quantityEspresso == 0) {
@@ -95,12 +113,10 @@ submitbutton.addEventListener('submit', (e) => {
     if (!haveEspresso && quantityEspresso > 0) {
         checkMensage('#checkEspresso', 'Marque o Café Espresso')
     } 
-
       /*                Latte       */
 
     if (haveLatte && quantityLatte > 0) {
-        OrderSummary('Latte', quantityLatte, '#checkLatte')
-        isVisibleResume = true       
+        OrderSummary('Latte', quantityLatte, '#checkLatte')   
     }
 
     if (haveLatte && quantityLatte == 0) {

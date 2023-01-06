@@ -40,24 +40,32 @@
                 <h1>Preencha seus dados</h1>
                 <div>
                     <label>Nome:</label>
-                    <input class="input-data" required type="text" id="name"  />
+                    <input class="input-data"  type="text" id="name"  />
                 </div>
+
+                <div class="error checkName visible" id="checkName"></div>
     
                 <div>
                     <label>E-mail:</label>
-                    <input class="input-data" required type="email" id="email" />
+                    <input class="input-data" type="email" id="email" />
                 </div>
+
+                <div class="error checkEmail visible" id="checkEmail"></div>
     
                 <div>
                     <label>Contato:</label>            
-                    <input class="input-data" required keyboardType="numeric" minlength="6"
+                    <input class="input-data" keyboardType="numeric" minlength="6"
                     maxLength="11" placeholder="(84)98135-4525" type="tel" id="contact" >
                 </div>
+
+                <div class="error checkContact visible" id="checkContact"></div>
     
                 <div>
                     <label>Endereço:</label>
-                    <input class="input-data" required placeholder="Rua maria carma - bairro chicago - n°22"  type="text" id="address">
+                    <input class="input-data" placeholder="Rua maria carma - bairro chicago - n°22"  type="text" id="address">
                 </div>
+
+                <div class="error checkAddress visible" id="checkAddress"></div>
             </div>          
 
             <div class="product">
