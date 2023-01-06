@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// Criando comando que preenche os campos obrigatórios
+
+Cypress.Commands.add('fillMandatoryFields', function () {    
+            cy.get('#name')
+            .type('Ana carla Nogueira')
+            .should('have.value', 'Ana carla Nogueira')
+
+            cy.get('#email')
+            .type('ana@email.com')
+            .should('have.value', 'ana@email.com')
+
+            cy.get('#contact')
+            .type('84998989898')
+            .should('have.value', '84998989898')
+
+            cy.get('#address')
+            .type('Rua Maria Carma - Lagoa do riacho - n 900')
+            .should('have.value', 'Rua Maria Carma - Lagoa do riacho - n 900')            
+})

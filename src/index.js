@@ -75,15 +75,17 @@ submitbutton.addEventListener('submit', (e) => {
     }
     
     if (haveChocolatto && quantityChocollato > 0) {
-        OrderSummary('Chocolatto', quantityChocollato, '#checkChocollato')
+        OrderSummary('Chocolatto', quantityChocollato, '#checkChocollato')        
     }    
     
     if (haveChocolatto && quantityChocollato == 0) {
         checkMensage('#checkChocollato', 'Informe a quantidade de Café de Chocolate')
+        isVisibleResume = false  
     }  
 
     if (!haveChocolatto && quantityChocollato > 0) {
         checkMensage('#checkChocollato', 'Marque o Café')
+        isVisibleResume = false  
     } 
     
       /*                Capuccino         */
@@ -94,10 +96,12 @@ submitbutton.addEventListener('submit', (e) => {
     
     if (haveCapuccino && quantityCapuccino == 0) {
         checkMensage('#checkCapuccino', 'Informe a quantidade de Café de avelã')
+        isVisibleResume = false  
     }  
 
     if (!haveCapuccino && quantityCapuccino > 0) {
         checkMensage('#checkCapuccino', 'Marque o Capuccino de avelã')
+        isVisibleResume = false  
     }
 
     /*                Espresso         */
@@ -108,10 +112,12 @@ submitbutton.addEventListener('submit', (e) => {
 
     if (haveEspresso && quantityEspresso == 0) {
         checkMensage('#checkEspresso', 'Informe a quantidade de Café Espresso')
+        isVisibleResume = false  
     }  
 
     if (!haveEspresso && quantityEspresso > 0) {
         checkMensage('#checkEspresso', 'Marque o Café Espresso')
+        isVisibleResume = false  
     } 
       /*                Latte       */
 
@@ -121,10 +127,12 @@ submitbutton.addEventListener('submit', (e) => {
 
     if (haveLatte && quantityLatte == 0) {
         checkMensage('#checkLatte', 'Informe a quantidade de Café Latte')
+        isVisibleResume = false  
     }  
 
     if (!haveLatte && quantityLatte > 0) {
         checkMensage('#checkLatte', 'Marque o Café Latte')
+        isVisibleResume = false  
     } 
 
     if (isVisibleResume) {

@@ -101,33 +101,24 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
             cy.get('.error').should('be.visible')
         });
 
-        // it('exibe mensagem de erro quando a quantidade de café chocolatto não é selecionada', function() {
-        //     cy.get('#name')
-        //     .type('Ana carla Nogueira')
-        //     .should('have.value', 'Ana carla Nogueira')
+        it('exibe mensagem de erro quando a quantidade de café chocolatto não é selecionada', function() {
+            cy.fillMandatoryFields()
 
-        //     cy.get('#email')
-        //     .type('ana@email.com')
-        //     .should('have.value', 'ana@email.com')
+            cy.get('#chocollato').click()
+            cy.get('#quantityChocollato').select('0')
 
-        //     cy.get('#contact')
-        //     .type('84998989898')
-        //     .should('have.value', '84998989898')
+            cy.contains('button', 'Enviar').should('be.visible').click()
+             
+            cy.get('#checkChocollato').should('be.visible')
+        });
 
-        //     cy.get('#address')
-        //     .type('Rua Maria Carma - Lagoa do riacho - n 900')
-        //     .should('have.value', 'Rua Maria Carma - Lagoa do riacho - n 900')
-
-        //     cy.get('#chocollato').click()
-        //     cy.get('#quantityChocollato').select('0')
-
+        // it.only('exibe mensagem de erro quando a quantidade de café chocolatto é selecionada, mas o café não está selecionado', function() {
+        //     cy.fillMandatoryFields()
+        //     cy.get('#chocollato')
+        //     cy.get('#quantityChocollato').select('1')
         //     cy.contains('button', 'Enviar').should('be.visible').click()
              
         //     cy.get('#checkChocollato').should('be.visible')
-        // });
-
-        // it('exibe mensagem de erro quando a quantidade de café chocolatto é selecionada, mas o café não está selecionado', function() {
-
         // });
 
 
@@ -161,6 +152,15 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
         // it('exibe mensagem de erro quando a quantidade de café latte macchiato é selecionada, mas o café não está selecionado', function() {
 
         // });
+
+
+        // it('exibe mensagem de erro quando um email inválido é inserido', function() {
+
+        // });
+
+        // it('Campo telefone continua vazio quando preenchido com valor não numérico', function() {
+        //     
+        // })
     });
     
 
