@@ -121,10 +121,16 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
             cy.get('#checkChocollato').should('be.visible')
         });
 
+        it('exibe mensagem de erro quando a quantidade de café capuccino avelã não é selecionada', function() {
+            cy.fillMandatoryFields()
 
-        // it('exibe mensagem de erro quando a quantidade de café capuccino avelã não é selecionada', function() {
+            cy.get('#capuccino').click()
+            cy.get('#quantityCapuccino').select('0')
 
-        // });
+            cy.contains('button', 'Enviar').should('be.visible').click()
+             
+            cy.get('#checkCapuccino').should('be.visible')
+        });
 
         // it('exibe mensagem de erro quando a quantidade de café capuccino avelã é selecionada, mas o café não está selecionado', function() {
 
