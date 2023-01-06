@@ -14,7 +14,7 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
         });
     });
 
-    context('testando a páginade formulário de pedidos', function() {
+    context('testando a página de formulário de pedidos', function() {
         
         beforeEach( () => {
             cy.visit('./src/form.html')
@@ -57,7 +57,39 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
             .type(longText)
             .should('have.value', longText)
 
-            cy.get('.submitbutton').click()            
+            cy.contains('button', 'Enviar').should('be.visible').click()          
+        });
+
+        it('exibe mensagem de sucesso quando o pedido é realizado', function() {
+            
+            const longText = 'Adição de calda de chocolate'
+            cy.get('#name')
+            .type('Ana carla Nogueira')
+            .should('have.value', 'Ana carla Nogueira')
+
+            cy.get('#email')
+            .type('ana@email.com')
+            .should('have.value', 'ana@email.com')
+
+            cy.get('#contact')
+            .type('84998989898')
+            .should('have.value', '84998989898')
+
+            cy.get('#address')
+            .type('Rua Maria Carma - Lagoa do riacho - n 900')
+            .should('have.value', 'Rua Maria Carma - Lagoa do riacho - n 900')
+
+            cy.get('#chocollato').click()
+            cy.get('#quantityChocollato').select('1')
+
+            cy.get('#comentarios')
+            .type(longText)
+            .should('have.value', longText)
+
+            cy.contains('button', 'Enviar').should('be.visible').click()
+             
+            cy.get('.order').should('be.visible')
+                    
         });
     });
     
