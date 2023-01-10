@@ -22,6 +22,26 @@ function checkMensage(id, msn){
     div.appendChild(p)
 }
 
+function validacaoEmail(email) {
+    let usuario = email.substring(0, email.indexOf("@"));
+    let dominio = email.substring(email.indexOf("@")+ 1, email.length);
+    
+    if ((usuario.length >=1) &&
+        (dominio.length >=3) &&
+        (usuario.search("@")==-1) &&
+        (dominio.search("@")==-1) &&
+        (usuario.search(" ")==-1) &&
+        (dominio.search(" ")==-1) &&
+        (dominio.search(".")!=-1) &&
+        (dominio.indexOf(".") >=1)&&
+        (dominio.lastIndexOf(".") < dominio.length - 1)) 
+    {
+        return true;    
+    } else{
+        return false;
+    }
+}
+
 submitbutton.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -56,6 +76,11 @@ submitbutton.addEventListener('submit', (e) => {
 
     if(email == ''){
         checkMensage('#checkEmail', 'Informe seu email')
+        isVisibleResume = false 
+    }
+
+    if(!validacaoEmail(email)){
+        checkMensage('#checkEmail', 'Email inválido')
         isVisibleResume = false 
     }
 
@@ -140,3 +165,8 @@ submitbutton.addEventListener('submit', (e) => {
         order.classList.toggle('visible');
     }    
 })
+
+
+
+
+    
