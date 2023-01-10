@@ -43,3 +43,24 @@ Cypress.Commands.add('fillMandatoryFields', function () {
             .type('Rua Maria Carma - Lagoa do riacho - n 900')
             .should('have.value', 'Rua Maria Carma - Lagoa do riacho - n 900')            
 })
+
+Cypress.Commands.add('errorWhenAmountCoffeeIsNotSelected', function (idCoffe, idQuantity, idCheckCoffe) {    
+    cy.get(idCoffe).click()
+    cy.get(idQuantity).select('0')
+
+    cy.contains('button', 'Enviar').should('be.visible').click()
+             
+    cy.get(idCheckCoffe).should('be.visible')          
+})
+
+Cypress.Commands.add('errorWhenCoffeeIsNotSelected', function (idCoffe, idQuantity, idCheckCoffe) {    
+    cy.get(idCoffe)
+    cy.get(idQuantity).select('1')
+    cy.contains('button', 'Enviar').should('be.visible').click()
+     
+    cy.get(idCheckCoffe).should('be.visible')        
+})
+
+
+
+           

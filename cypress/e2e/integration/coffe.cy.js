@@ -103,76 +103,44 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
 
         it('exibe mensagem de erro quando a quantidade de café chocolatto não é selecionada', function() {
             cy.fillMandatoryFields()
-
-            cy.get('#chocollato').click()
-            cy.get('#quantityChocollato').select('0')
-
-            cy.contains('button', 'Enviar').should('be.visible').click()
-             
-            cy.get('#checkChocollato').should('be.visible')
+            cy.errorWhenAmountCoffeeIsNotSelected('#chocollato', '#quantityChocollato', '#checkChocollato')
         });
 
         it('exibe mensagem de erro quando a quantidade de café chocolatto é selecionada, mas o café não está selecionado', function() {
             cy.fillMandatoryFields()
-            cy.get('#chocollato')
-            cy.get('#quantityChocollato').select('1')
-            cy.contains('button', 'Enviar').should('be.visible').click()
-             
-            cy.get('#checkChocollato').should('be.visible')
+            cy.errorWhenCoffeeIsNotSelected('#chocollato', '#quantityChocollato', '#checkChocollato')
         });
 
         it('exibe mensagem de erro quando a quantidade de café capuccino avelã não é selecionada', function() {
             cy.fillMandatoryFields()
-
-            cy.get('#capuccino').click()
-            cy.get('#quantityCapuccino').select('0')
-
-            cy.contains('button', 'Enviar').should('be.visible').click()
-             
-            cy.get('#checkCapuccino').should('be.visible')
+            cy.errorWhenAmountCoffeeIsNotSelected('#capuccino', '#quantityCapuccino', '#checkCapuccino')
         });
 
         it('exibe mensagem de erro quando a quantidade de café capuccino avelã é selecionada, mas o café não está selecionado', function() {
             cy.fillMandatoryFields()
-            cy.get('#capuccino')
-            cy.get('#quantityCapuccino').select('1')
-            cy.contains('button', 'Enviar').should('be.visible').click()
-             
-            cy.get('#checkCapuccino').should('be.visible')
+            cy.errorWhenCoffeeIsNotSelected('#capuccino', '#quantityCapuccino', '#checkCapuccino')
         });
 
         it('exibe mensagem de erro quando a quantidade de café espresso não é selecionada', function() {
             cy.fillMandatoryFields()
-
-            cy.get('#espresso').click()
-            cy.get('#quantityEspresso').select('0')
-
-            cy.contains('button', 'Enviar').should('be.visible').click()
-             
-            cy.get('#checkEspresso').should('be.visible')
+            cy.errorWhenAmountCoffeeIsNotSelected('#espresso', '#quantityEspresso', '#checkEspresso')
         });
 
         it('exibe mensagem de erro quando a quantidade de café espresso é selecionada, mas o café não está selecionado', function() {
             cy.fillMandatoryFields()
-            cy.get('#espresso')
-            cy.get('#quantityEspresso').select('1')
-            cy.contains('button', 'Enviar').should('be.visible').click()
-             
-            cy.get('#checkEspresso').should('be.visible')
+            cy.errorWhenCoffeeIsNotSelected('#espresso', '#quantityEspresso', '#checkEspresso')
+            
         });
-        
 
+        it('exibe mensagem de erro quando a quantidade de café latte macchiato não é selecionada', function() {
+            cy.fillMandatoryFields()
+            cy.errorWhenAmountCoffeeIsNotSelected('#latte', '#quantityLatte', '#checkLatte' )
+        });
 
-
-
-
-        // it('exibe mensagem de erro quando a quantidade de café latte macchiato não é selecionada', function() {
-
-        // });
-
-        // it('exibe mensagem de erro quando a quantidade de café latte macchiato é selecionada, mas o café não está selecionado', function() {
-
-        // });
+        it('exibe mensagem de erro quando a quantidade de café latte macchiato é selecionada, mas o café não está selecionado', function() {
+            cy.fillMandatoryFields()
+            cy.errorWhenCoffeeIsNotSelected('#latte', '#quantityLatte', '#checkLatte')
+        });
 
 
         // it('exibe mensagem de erro quando um email inválido é inserido', function() {
