@@ -152,9 +152,15 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
             cy.get('#checkEspresso').should('be.visible')
         });
 
-        // it('exibe mensagem de erro quando a quantidade de café espresso é selecionada, mas o café não está selecionado', function() {
-
-        // });
+        it('exibe mensagem de erro quando a quantidade de café espresso é selecionada, mas o café não está selecionado', function() {
+            cy.fillMandatoryFields()
+            cy.get('#espresso')
+            cy.get('#quantityEspresso').select('1')
+            cy.contains('button', 'Enviar').should('be.visible').click()
+             
+            cy.get('#checkEspresso').should('be.visible')
+        });
+        
 
 
 
