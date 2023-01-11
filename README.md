@@ -1,7 +1,12 @@
 
-# Testando a homepage criada para marca de café - RocketCoffe - Cypress
+# Testando a homepage criada para marca de café - RocketCoffe
 
 Nesse projeto testo de forma independente a homepage que criei para marca de café, utilizando a ferramenta cypress. 
+
+
+## Demonstração
+
+![Demo](https://media.giphy.com/media/9vzs5xrVXW9EBD6QCp/giphy.gif "Demo")
 
 
 ## Documentação do Projeto
@@ -44,8 +49,3 @@ Para realização dos testes é necessário ter instalado na máquina as seguint
 - Exibe mensagem de erro quando a quantidade de café latte macchiato não é selecionada
 - Exibe mensagem de erro quando a quantidade de café latte macchiato é selecionada, mas o café não está selecionado
 - exibe mensagem de erro quando um email inválido é inserido
-
-
-## Demonstração
-
-![Demo](https://media.giphy.com/media/9vzs5xrVXW9EBD6QCp/giphy.gif "Demo")
