@@ -22,7 +22,7 @@ function checkMensage(id, msn){
     div.appendChild(p)
 }
 
-function validacaoEmail(email) {
+function emailValidation(email) {
     let usuario = email.substring(0, email.indexOf("@"));
     let dominio = email.substring(email.indexOf("@")+ 1, email.length);
     
@@ -47,9 +47,10 @@ submitbutton.addEventListener('submit', (e) => {
 
     let name = document.querySelector('#name').value
     let email = document.querySelector('#email').value
-    let contact = document.querySelector('#contact').value
+    let contact = document.querySelector('#contact').value 
+    console.log(typeof contact)
     let address = document.querySelector('#address').value
-    let observacoes = document.querySelector('#comentarios').value
+    let observacoes = document.querySelector('#comentarios').value    
 
     let haveChocolatto = document.querySelector('#chocollato').checked
     let haveCapuccino = document.querySelector('#capuccino').checked
@@ -63,9 +64,9 @@ submitbutton.addEventListener('submit', (e) => {
     
     divOrderName.innerText = name 
     divOrderEmail.innerText = email
-    divOrderContact.innerText = contact
+    divOrderContact.innerText = contact 
     divOrderAddress.innerText = address
-    divOrderObservacoes.innerText = observacoes 
+    divOrderObservacoes.innerText = observacoes    
 
     let isVisibleResume = true
                    /* Required fields */
@@ -79,7 +80,7 @@ submitbutton.addEventListener('submit', (e) => {
         isVisibleResume = false 
     }
 
-    if(!validacaoEmail(email)){
+    if(!emailValidation(email)){
         checkMensage('#checkEmail', 'Email inválido')
         isVisibleResume = false 
     }

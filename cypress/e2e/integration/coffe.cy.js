@@ -143,16 +143,29 @@ describe('Central de Atendimento ao Cliente Great Coffe', function() {
         });
 
 
-        // it('exibe mensagem de erro quando um email inválido é inserido', function() {
+        it('exibe mensagem de erro quando um email inválido é inserido', function() {
+            cy.get('#name')
+            .type('Ana carla Nogueira')
+            .should('have.value', 'Ana carla Nogueira')
 
-        // });
+            cy.get('#email')
+            .type('anaemail.com')
+            .should('have.value', 'anaemail.com')
 
-        // it('Campo telefone continua vazio quando preenchido com valor não numérico', function() {
-        //     
-        // })
+            cy.get('#contact')
+            .type('84998989898')
+            .should('have.value', '84998989898')
+
+            cy.get('#address')
+            .type('Rua Maria Carma - Lagoa do riacho - n 900')
+            .should('have.value', 'Rua Maria Carma - Lagoa do riacho - n 900')
+
+            cy.get('#chocollato').click()
+            cy.get('#quantityChocollato').select('1')
+
+            cy.contains('button', 'Enviar').should('be.visible').click()
+             
+            cy.get('.error').should('be.visible')
+        });
     });
-    
-
-    
-
 })
